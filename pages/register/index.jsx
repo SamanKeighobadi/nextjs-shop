@@ -8,6 +8,7 @@ import {
   Card,
   Button,
 } from "react-bootstrap";
+import Link from "next/link";
 
 const Register = () => {
   return (
@@ -16,7 +17,7 @@ const Register = () => {
         <title>Register</title>
       </Head>
       <Card className="mt-5 mx-2" style={{ width: "450px" }}>
-        <Card.Header>Register form</Card.Header>
+        <Card.Header>Register</Card.Header>
         <Card.Body>
           <Form >
             <FormGroup className="mb-3">
@@ -31,11 +32,15 @@ const Register = () => {
               <Form.Label>Password:</Form.Label>
               <FormControl type="password" placeholder="Password" />
             </FormGroup>
-            <FormGroup className="mb-3">
+            <FormGroup className="mb-1">
               <Form.Label>Confirm Password:</Form.Label>
               <FormControl type="password" placeholder="Confirm password" />
             </FormGroup>
-            <Button>Submit</Button>
+            <Form.Text  >
+                have account? <Link href={"/login"}> Login </Link>
+            </Form.Text>
+            <br />
+            <Button className="mt-2 btn w-100" >Submit</Button>
           </Form>
         </Card.Body>
       </Card>
