@@ -4,8 +4,8 @@ export const registerValidation = yup.object().shape({
   name: yup
     .string()
     .required("name is required")
-    .min("least than 5 char", 5)
-    .max("more than 120 char", 120)
+    .min(5, "least than 5 char")
+    .max(120, "more than 120 char")
     .trim(),
   email: yup
     .string()
@@ -15,10 +15,10 @@ export const registerValidation = yup.object().shape({
   password: yup
     .string()
     .required("Password is required")
-    .min("least than 4 char", 4)
-    .max("more than 120 char", 120)
+    .min(4, "least than 4 char")
+    .max(120, "more than 120 char")
     .trim(),
-  confirmPaasswrod: yup
+    confirmPassword: yup
     .string()
     .required("Confirm password is required")
     .oneOf([yup.ref("password"), null], "confirm password is not correct"),
