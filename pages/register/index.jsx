@@ -9,6 +9,8 @@ import {
   Button,
 } from "react-bootstrap";
 import Link from "next/link";
+// Formik
+import Fromik from "formik";
 
 const Register = () => {
   return (
