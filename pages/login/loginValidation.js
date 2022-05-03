@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-export const loginValidation = yup.object().shop({
+export const loginValidation = yup.object().shape({
   email: yup
     .string()
     .required("email is required")
@@ -9,7 +9,7 @@ export const loginValidation = yup.object().shop({
   password: yup
     .string()
     .required("Password is required")
-    .min("least than 4 char", 4)
-    .max("more than 120 char", 120)
+    .min(4,"least than 4 char")
+    .max(120, "more than 120 char")
     .trim(),
 });
