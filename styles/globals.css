@@ -16,5 +16,5 @@ a {
 }
 
 .error{
-  border: 1px solid #FF6565;
+  border: 1px solid #FF6565 !important;
 }
