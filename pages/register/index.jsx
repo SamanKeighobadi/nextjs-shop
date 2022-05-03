@@ -7,7 +7,20 @@ import Link from "next/link";
 import { Formik } from "formik";
 import { registerValidation } from "./registerValidation";
 
+import { postData } from "../../utils/fetchData";
+
+
 const Register = () => {
+
+
+  const onSubmit = async (values, { setSubmitting }) => {
+    setSubmitting(true);
+    // console.log(values);
+    const res = await postData('auth/register',values)
+    console.log(res);
+    setSubmitting(false);
+  }
+
   return (
     <div className="d-flex justify-content-center">
       <Head>
@@ -25,11 +38,7 @@ const Register = () => {
               confirmPassword: "",
             }}
             validationSchema={registerValidation}
-            onSubmit={(values, { setSubmitting }) => {
-              setSubmitting(true);
-              console.log(values);
-              setSubmitting(false);
-            }}
+            onSubmit={onSubmit}
           >
             {({
               values,

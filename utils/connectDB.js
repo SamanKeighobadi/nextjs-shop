@@ -8,7 +8,7 @@ const connectDB = () => {
   mongoose.connect(
     "mongodb://localhost:27017/next_shop",
     {
-      useCreateIndex: true,
+      
     },
     (err) => {
       if (err) throw err;
